@@ -1,0 +1,18 @@
+{
+ "road": [
+  {"label": "雪なし", "cm": 0, "prompts": ["a photo of a dry road with no snow", "a photo of a wet road after rain with no snow on it", "a photo of a bare asphalt road in winter"]},
+  {"label": "降り始め・うっすら", "cm": 0.5, "prompts": ["a photo of a wet road while light snow is falling", "a photo of a road with a thin dusting of snow, the asphalt still visible", "a photo of a road covered with slush"]},
+  {"label": "〜5cm", "cm": 3, "prompts": ["a photo of a road covered with a thin layer of snow", "a photo of a snowy road with tire tracks showing the asphalt", "a photo of a road with a few centimeters of snow"]},
+  {"label": "〜15cm", "cm": 10, "prompts": ["a photo of a road covered with about ten centimeters of snow", "a photo of a road with snow covering the curb", "a photo of a road completely white with snow, no asphalt visible"]},
+  {"label": "〜30cm", "cm": 22, "prompts": ["a photo of a road covered with deep snow", "a photo of cars with snow halfway up their tires", "a photo of a street under heavy snow, about thirty centimeters"]},
+  {"label": "30cm超", "cm": 45, "prompts": ["a photo of a road buried under very deep snow", "a photo of cars completely buried in snow", "a photo of a street with snow higher than the knees"]}
+ ],
+ "around": [
+  {"label": "雪なし", "cm": 0, "prompts": ["a photo of a street with no snow anywhere"]},
+  {"label": "うっすら", "cm": 0.5, "prompts": ["a photo of a town with a light dusting of snow"]},
+  {"label": "〜5cm", "cm": 3, "prompts": ["a photo of a town with a thin layer of snow on the ground"]},
+  {"label": "〜15cm", "cm": 10, "prompts": ["a photo of a town covered with snow"]},
+  {"label": "〜30cm", "cm": 22, "prompts": ["a photo of a town covered with deep snow"]},
+  {"label": "30cm超", "cm": 45, "prompts": ["a photo of a snowy region with snow walls higher than a person along the road"]}
+ ]
+}

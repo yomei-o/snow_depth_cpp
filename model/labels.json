@@ -1,0 +1,982 @@
+[
+{
+"file": "commons/nagaoka/000.jpg",
+"road": 0,
+"around": 5
+},
+{
+"file": "commons/nagaoka/001.jpg",
+"road": 0,
+"around": 5
+},
+{
+"file": "commons/nagaoka/002.jpg",
+"road": 0,
+"around": 5
+},
+{
+"file": "commons/nagaoka/003.jpg",
+"road": 0,
+"around": 4
+},
+{
+"file": "commons/nagaoka/005.jpg",
+"road": 0,
+"around": 5
+},
+{
+"file": "commons/nagaoka/006.jpg",
+"road": 3,
+"around": 5
+},
+{
+"file": "commons/nagaoka/007.jpg",
+"road": 0,
+"around": 4
+},
+{
+"file": "commons/nagaoka/008.jpg",
+"road": 0,
+"around": 3
+},
+{
+"file": "commons/nagaoka/009.jpg",
+"road": 0,
+"around": 4
+},
+{
+"file": "commons/nagaoka/010.jpg",
+"road": 0,
+"around": 5
+},
+{
+"file": "commons/nagaoka/011.jpg",
+"road": 1,
+"around": 5
+},
+{
+"file": "commons/nagaoka/012.jpg",
+"road": 0,
+"around": 5
+},
+{
+"file": "commons/nagaoka/013.jpg",
+"road": 0,
+"around": 5
+},
+{
+"file": "commons/nagaoka/014.jpg",
+"road": 0,
+"around": 3
+},
+{
+"file": "commons/nagaoka/015.jpg",
+"road": 0,
+"around": 5
+},
+{
+"file": "commons/nagaoka/016.jpg",
+"road": 0,
+"around": 5
+},
+{
+"file": "commons/nagaoka/017.jpg",
+"road": 0,
+"around": 4
+},
+{
+"file": "commons/nagaoka/018.jpg",
+"road": 0,
+"around": 4
+},
+{
+"file": "commons/nagaoka/019.jpg",
+"road": 0,
+"around": 4
+},
+{
+"file": "commons/nagaoka/020.jpg",
+"road": 0,
+"around": 3
+},
+{
+"file": "commons/nagaoka/021.jpg",
+"road": 0,
+"around": 4
+},
+{
+"file": "commons/nagaoka/022.jpg",
+"road": 0,
+"around": 4
+},
+{
+"file": "commons/nagaoka/023.jpg",
+"road": 0,
+"around": 4
+},
+{
+"file": "commons/nagaoka/024.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/nagaoka/025.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/nagaoka/026.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "commons/nagaoka/027.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/nagaoka/028.jpg",
+"road": 1,
+"around": 3
+},
+{
+"file": "commons/nagaoka/029.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/nagaoka/030.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/nagaoka/031.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "commons/nagaoka/032.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "commons/nagaoka/033.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "commons/nagaoka/034.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/nagaoka/035.jpg",
+"road": 0,
+"around": 2
+},
+{
+"file": "commons/nagaoka/036.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "commons/nagaoka/037.jpg",
+"road": 4,
+"around": 5
+},
+{
+"file": "commons/nagaoka/038.jpg",
+"road": 5,
+"around": 5
+},
+{
+"file": "commons/uonuma/000.jpg",
+"road": 0,
+"around": 3
+},
+{
+"file": "commons/ojiya/000.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "commons/ojiya/001.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "commons/ojiya/002.jpg",
+"road": 0,
+"around": 3
+},
+{
+"file": "commons/ojiya/003.jpg",
+"road": 4,
+"around": 5
+},
+{
+"file": "commons/ojiya/004.jpg",
+"road": 4,
+"around": 5
+},
+{
+"file": "commons/japan/000.jpg",
+"road": 0,
+"around": 4
+},
+{
+"file": "commons/japan/001.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/japan/002.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/japan/003.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/japan/004.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "commons/japan/005.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/japan/006.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/japan/007.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/japan/008.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "commons/japan/009.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/japan/010.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "commons/japan/011.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "commons/japan/012.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/japan/013.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/japan/014.jpg",
+"road": 0,
+"around": 5
+},
+{
+"file": "commons/japan/015.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "commons/japan/016.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "commons/japan/017.jpg",
+"road": 4,
+"around": 5
+},
+{
+"file": "commons/japan/018.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "commons/hokkaido/000.jpg",
+"road": 4,
+"around": 4
+},
+{
+"file": "commons/hokkaido/001.jpg",
+"road": 2,
+"around": 4
+},
+{
+"file": "commons/hokkaido/002.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "commons/hokkaido/003.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "commons/hokkaido/004.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/hokkaido/005.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/hokkaido/006.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/hokkaido/007.jpg",
+"road": 3,
+"around": 4
+},
+{
+"file": "commons/hokkaido/008.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/hokkaido/009.jpg",
+"road": 4,
+"around": 4
+},
+{
+"file": "commons/hokkaido/010.jpg",
+"road": 4,
+"around": 4
+},
+{
+"file": "commons/hokkaido/011.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "commons/hokkaido/012.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "commons/feb2014/002.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "commons/feb2014/005.jpg",
+"road": 0,
+"around": 2
+},
+{
+"file": "commons/miki/000.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "commons/miki/001.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "commons/miki/002.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "commons/miki/003.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/tokyo/000.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/tokyo/002.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/tokyo/003.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/tokyo/004.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/tokyo/005.jpg",
+"road": 0,
+"around": 1
+},
+{
+"file": "edge/tokyo/006.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/tokyo/007.jpg",
+"road": 0,
+"around": 1
+},
+{
+"file": "edge/tokyo/009.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/tokyo/010.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/tokyo/019.jpg",
+"road": 0,
+"around": 1
+},
+{
+"file": "edge/tokyo/021.jpg",
+"road": 0,
+"around": 1
+},
+{
+"file": "edge/tokyo/023.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/tokyo/024.jpg",
+"road": 0,
+"around": 2
+},
+{
+"file": "edge/tokyo/025.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/tokyo/032.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/tokyo/033.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/tokyo/036.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "edge/tokyo/037.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/tokyo/038.jpg",
+"road": 0,
+"around": 1
+},
+{
+"file": "edge/bunkyo/001.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/bunkyo/002.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/chofu/001.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/chofu/003.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/chofu/005.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/chofu/006.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/minato/001.jpg",
+"road": 0,
+"around": 2
+},
+{
+"file": "edge/minato/003.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/minato/004.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/minato/005.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/minato/009.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/musashino/000.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/musashino/001.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/musashino/002.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/musashino/003.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/taito/000.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/taito/001.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/taito/002.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/taito/003.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/slush/000.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/slush/001.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/slush/002.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/slush/005.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/slush/006.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/slush/007.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/slush/008.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/slush/009.jpg",
+"road": 0,
+"around": 3
+},
+{
+"file": "edge/slush/011.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/slush/012.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/slush/013.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/slush/015.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/slush/025.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/slush/026.jpg",
+"road": 0,
+"around": 1
+},
+{
+"file": "edge/slush/028.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/slush/030.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/slush/032.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/slush/033.jpg",
+"road": 0,
+"around": 1
+},
+{
+"file": "edge/slush/035.jpg",
+"road": 2,
+"around": 3
+},
+{
+"file": "edge/rainsnow/001.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/firstsnow/000.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/firstsnow/003.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/firstsnow/004.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/firstsnow/007.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/firstsnow/008.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/firstsnow/009.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/firstsnow/016.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/blackice/000.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/blackice/002.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/blackice/003.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/blackice/004.jpg",
+"road": 0,
+"around": 1
+},
+{
+"file": "edge/blackice/005.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/blackice/008.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/blackice/009.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/blackice/010.jpg",
+"road": 1,
+"around": 1
+},
+{
+"file": "edge/wetjp/000.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/wetjp/002.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/wetjp/003.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/wetjp/004.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/wetjp/005.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/wetjp/006.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/wetjp/007.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/wetjp/008.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/wetjp/009.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/wetjp/010.jpg",
+"road": 0,
+"around": 0
+},
+{
+"file": "edge/buried/000.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "edge/buried/001.jpg",
+"road": 4,
+"around": 4
+},
+{
+"file": "edge/buried/002.jpg",
+"road": 4,
+"around": 4
+},
+{
+"file": "edge/buried/003.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "edge/buried/005.jpg",
+"road": 4,
+"around": 4
+},
+{
+"file": "edge/buried/006.jpg",
+"road": 4,
+"around": 4
+},
+{
+"file": "edge/buried/008.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "edge/buried/009.jpg",
+"road": 5,
+"around": 5
+},
+{
+"file": "edge/buried/010.jpg",
+"road": 5,
+"around": 5
+},
+{
+"file": "edge/buried/011.jpg",
+"road": 5,
+"around": 5
+},
+{
+"file": "edge/buried/012.jpg",
+"road": 4,
+"around": 4
+},
+{
+"file": "edge/buried/013.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "edge/buried/014.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "edge/buried/015.jpg",
+"road": 5,
+"around": 5
+},
+{
+"file": "edge/buried/016.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "edge/buried/017.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/buried/018.jpg",
+"road": 2,
+"around": 2
+},
+{
+"file": "edge/buried/019.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "edge/buried/020.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "edge/buried/021.jpg",
+"road": 4,
+"around": 4
+},
+{
+"file": "edge/buried/022.jpg",
+"road": 4,
+"around": 4
+},
+{
+"file": "edge/buried/023.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "edge/buried/025.jpg",
+"road": 3,
+"around": 4
+},
+{
+"file": "edge/buried/026.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/buried/027.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "edge/buried/028.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "edge/buried/029.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/buried/030.jpg",
+"road": 1,
+"around": 2
+},
+{
+"file": "edge/buried/032.jpg",
+"road": 4,
+"around": 4
+},
+{
+"file": "edge/buried/033.jpg",
+"road": 3,
+"around": 3
+},
+{
+"file": "edge/buried/034.jpg",
+"road": 3,
+"around": 3
+}
+]

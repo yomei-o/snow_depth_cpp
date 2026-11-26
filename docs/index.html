@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>道路の積雪チェッカー</title>
+<style>
+:root {
+  --bg: #f5f8fb; --fg: #1d2630; --sub: #5f6b78; --card: #fff; --line: #dde5ee;
+  --accent: #1c7ed6; --accent2: #74c0fc; --bar: #e8eef5; --warn: #e8590c;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #12161b; --fg: #e8edf2; --sub: #9aa7b4; --card: #1b2129; --line: #2d3742; --bar: #27303a; --accent: #4dabf7; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg);
+  font-family: system-ui, -apple-system, "Hiragino Sans", "Yu Gothic UI", sans-serif; line-height: 1.6; }
+main { max-width: 760px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 1.6rem; margin: 8px 0 4px; letter-spacing: .02em; }
+h1 span { color: var(--accent); }
+.lead { color: var(--sub); margin: 0 0 16px; font-size: .95rem; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-bottom: 16px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+button, label.btn { appearance: none; border: 1px solid var(--line); background: var(--card); color: var(--fg);
+  border-radius: 999px; padding: 10px 16px; font-size: 1rem; cursor: pointer; font-family: inherit; }
+button.primary, label.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+input[type=file] { display: none; }
+#status { font-size: .9rem; color: var(--sub); margin-top: 10px; min-height: 1.4em; }
+#prog { height: 6px; background: var(--bar); border-radius: 3px; overflow: hidden; margin-top: 8px; }
+#prog > div { height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+#cam { display: none; margin-top: 12px; }
+#cam video { width: 100%; max-height: 60vh; background: #000; border-radius: 10px; object-fit: contain; }
+.samples-h { font-size: .9rem; color: var(--sub); margin: 14px 0 0; font-weight: 600; }
+.samples { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 6px; margin-top: 6px; }
+.samples img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid transparent; }
+.samples img:hover { border-color: var(--accent); }
+.result { display: none; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 16px; align-items: start; }
+.result.show { display: grid; }
+@media (max-width: 560px) { .result.show { grid-template-columns: 1fr; } }
+#preview { width: 100%; border-radius: 10px; display: block; }
+.kind { font-size: .85rem; color: var(--sub); font-weight: 600; }
+.big { font-size: 2.6rem; font-weight: 800; line-height: 1.1; color: var(--accent); }
+.big small { font-size: 1rem; color: var(--sub); font-weight: 600; margin-left: 6px; }
+.mid { font-size: 1.4rem; font-weight: 700; }
+.mid small { font-size: .9rem; color: var(--sub); font-weight: 600; margin-left: 6px; }
+.comment { font-weight: 700; margin: 10px 0 14px; }
+.dist h3 { font-size: .85rem; color: var(--sub); margin: 12px 0 4px; font-weight: 600; }
+.lv { display: grid; grid-template-columns: 9em 1fr 3em; gap: 8px; align-items: center; font-size: .9rem; margin: 3px 0; }
+.lv .b { height: 8px; background: var(--bar); border-radius: 4px; overflow: hidden; }
+.lv .b > div { height: 100%; background: var(--accent); opacity: .8; }
+.lv.top span:first-child { font-weight: 700; }
+.lv .v { text-align: right; color: var(--sub); font-variant-numeric: tabular-nums; }
+.note { font-size: .82rem; color: var(--sub); }
+.note a { color: inherit; }
+details summary { cursor: pointer; }
+</style>
+</head>
+<body>
+<main>
+  <h1>道路の<span>積雪チェッカー</span></h1>
+  <p class="lead">道路の写真から、路面の雪とまわりの積雪がどのくらいかを AI が答えます。写真はこの端末の中だけで処理し、どこにも送りません。</p>
+
+  <div class="card">
+    <div class="row">
+      <label class="btn primary">写真を選ぶ<input type="file" id="file" accept="image/*"></label>
+      <button id="camBtn">カメラ</button>
+    </div>
+    <div id="cam">
+      <video id="video" playsinline muted></video>
+      <div class="row" style="margin-top:8px">
+        <button class="primary" id="shot">撮る</button>
+        <button id="flip">前後を切り替え</button>
+        <button id="camClose">閉じる</button>
+      </div>
+    </div>
+    <p class="samples-h">サンプルで試す（押すと判定します。学習に使った写真なので当たりやすいです）</p>
+    <div class="samples" id="samples"></div>
+    <div id="prog"><div></div></div>
+    <div id="status">AI モデル（約 97MB）を読み込んでいます…</div>
+  </div>
+
+  <div class="card result" id="result">
+    <div><img id="preview" alt="判定した写真"></div>
+    <div>
+      <div class="kind">路面の雪</div>
+      <div class="big"><span id="roadLabel"></span><small id="roadCm"></small></div>
+      <div class="kind" style="margin-top:8px">まわりの積雪</div>
+      <div class="mid"><span id="aroundLabel"></span><small id="aroundCm"></small></div>
+      <div class="comment" id="comment"></div>
+      <div class="dist"><h3>路面の雪（段階ごとの確からしさ）</h3><div id="roadDist"></div>
+        <h3>まわりの積雪</h3><div id="aroundDist"></div></div>
+    </div>
+  </div>
+
+  <div class="card note">
+    <p style="margin-top:0"><b>しくみ</b>：OpenAI の CLIP（ViT-B/32）を C++ で書き直して WebAssembly にしたものが写真の特徴を取り出します。その上の小さな層が、「雪なし／降り始め・うっすら／〜5cm／〜15cm／〜30cm／30cm超」の 6 段階を、路面とまわりで別々に答えます。</p>
+    <p>小さな層は、Wikimedia Commons の道路の写真 196 枚に<b>目で見てつけた段階</b>で学習しています。測った積雪ではありません。交差検証では、路面の段階がぴったり当たるのは約 6 割、1 段階以内に入るのは約 9 割でした。「雪なし」と「降り始め・うっすら」の取り違えがいちばん多いです。cm の数字は段階の代表値を確からしさで重みづけした目安です。</p>
+    <p>雪国では、除雪された路面は乾いていても、路肩には高い雪の壁があることがよくあります。なので路面とまわりを分けています。運転の判断には、道路情報や天気予報など公式の情報を使ってください。</p>
+    <details><summary>サンプル写真のクレジット</summary><ul id="credits"></ul></details>
+    <p style="margin-bottom:0">ソース：<a href="https://github.com/yomei-o/snow_depth_cpp">github.com/yomei-o/snow_depth_cpp</a>（C++ / Python）</p>
+  </div>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const worker = new Worker("worker.js");
+let ready = false, busy = false, pending = null, facing = "environment", stream = null;
+
+function setStatus(t) { $("status").textContent = t; }
+worker.onmessage = (e) => {
+  const m = e.data;
+  if (m.type === "progress") {
+    $("prog").firstElementChild.style.width = (100 * m.got / m.total).toFixed(1) + "%";
+    setStatus(`AI モデルを読み込んでいます… ${(m.got / 1048576).toFixed(0)} / ${(m.total / 1048576).toFixed(0)} MB`);
+  } else if (m.type === "ready") {
+    ready = true; $("prog").style.display = "none";
+    setStatus("準備できました。道路の写真を選ぶか、カメラで撮ってください。");
+    if (pending) { const p = pending; pending = null; judge(p); }
+  } else if (m.type === "result") {
+    busy = false; show(m.r); setStatus(`判定しました（${(m.ms / 1000).toFixed(1)} 秒）`);
+  } else if (m.type === "error") {
+    busy = false; setStatus("エラー: " + m.message);
+  }
+};
+
+// 長辺 640px に縮めて RGBA で worker に渡す
+function toRGBA(src, sw, sh) {
+  const s = Math.min(1, 640 / Math.max(sw, sh));
+  const w = Math.max(1, Math.round(sw * s)), h = Math.max(1, Math.round(sh * s));
+  const c = document.createElement("canvas"); c.width = w; c.height = h;
+  const g = c.getContext("2d"); g.imageSmoothingQuality = "high"; g.drawImage(src, 0, 0, w, h);
+  return { rgba: g.getImageData(0, 0, w, h).data, w, h, url: c.toDataURL("image/jpeg", 0.9) };
+}
+
+function judge(img) {
+  $("preview").src = img.url;
+  if (!ready) { pending = img; setStatus("モデルの読み込みが終わったら判定します…"); return; }
+  if (busy) return;
+  busy = true; setStatus("判定しています…");
+  worker.postMessage({ id: 1, rgba: img.rgba, w: img.w, h: img.h }, [img.rgba.buffer]);
+}
+
+const cmText = (cm) => cm < 0.3 ? "（ほぼ 0 cm）" : cm < 1 ? "（1 cm 未満）" : `（目安 約 ${Math.round(cm)} cm）`;
+
+function comment(r) {
+  const R = r.road.level, A = r.around.level, p1 = r.road.p[1];
+  if (R === 0 && A >= 3) return "路面は除雪されていますが、まわりにはたっぷり雪があります。";
+  if (R === 0 && p1 > 0.25) return "路面に雪はなさそうですが、降り始めかもしれません。";
+  if (R === 0) return "路面に雪はなさそうです。";
+  if (R === 1) return "降り始め・うっすら。濡れた路面やシャーベットは滑りやすいです。";
+  if (R === 2) return "うっすら積もっています。";
+  if (R === 3) return "しっかり積もっています。";
+  return "深い雪です。";
+}
+
+function dist(box, res, levels) {
+  box.textContent = "";
+  res.p.forEach((p, i) => {
+    const d = document.createElement("div"); d.className = "lv" + (i === res.level ? " top" : "");
+    d.innerHTML = `<span></span><div class="b"><div style="width:${(100 * p).toFixed(1)}%"></div></div><span class="v">${Math.round(100 * p)}%</span>`;
+    d.firstChild.textContent = levels[i][0]; box.appendChild(d);
+  });
+}
+
+function show(r) {
+  $("result").classList.add("show");
+  $("roadLabel").textContent = r.levels[r.road.level][0];
+  $("roadCm").textContent = cmText(r.road.cm);
+  $("aroundLabel").textContent = r.levels[r.around.level][0];
+  $("aroundCm").textContent = cmText(r.around.cm);
+  $("comment").textContent = comment(r);
+  dist($("roadDist"), r.road, r.levels); dist($("aroundDist"), r.around, r.levels);
+  $("result").scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+$("file").onchange = async (e) => {
+  const f = e.target.files[0]; if (!f) return;
+  try {
+    const bmp = await createImageBitmap(f, { imageOrientation: "from-image" });
+    judge(toRGBA(bmp, bmp.width, bmp.height)); bmp.close();
+  } catch (err) { setStatus("この画像は読めませんでした: " + err); }
+  e.target.value = "";
+};
+
+async function openCam() {
+  closeCam();
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: facing, width: { ideal: 1280 }, height: { ideal: 1280 } }, audio: false });
+  } catch (err) { setStatus("カメラを開けませんでした: " + err.message); return; }
+  const v = $("video"); v.srcObject = stream; v.style.transform = facing === "user" ? "scaleX(-1)" : "";
+  await v.play(); $("cam").style.display = "block";
+}
+function closeCam() {
+  if (stream) { stream.getTracks().forEach((t) => t.stop()); stream = null; }
+  $("cam").style.display = "none";
+}
+$("camBtn").onclick = openCam;
+$("camClose").onclick = closeCam;
+$("flip").onclick = () => { facing = facing === "user" ? "environment" : "user"; openCam(); };
+$("shot").onclick = () => { const v = $("video"); if (v.videoWidth) judge(toRGBA(v, v.videoWidth, v.videoHeight)); };
+
+fetch("samples/credits.json").then((r) => r.json()).then((list) => {
+  for (const c of list) {
+    const im = new Image(); im.src = c.file; im.alt = "サンプル";
+    im.onclick = () => { if (im.complete) judge(toRGBA(im, im.naturalWidth, im.naturalHeight)); };
+    $("samples").appendChild(im);
+    const li = document.createElement("li"); const a = document.createElement("a");
+    a.href = c.page; a.textContent = c.title.replace(/^File:/, ""); li.appendChild(a);
+    li.append(` — ${c.license}`); $("credits").appendChild(li);
+  }
+});
+</script>
+</body>
+</html>
